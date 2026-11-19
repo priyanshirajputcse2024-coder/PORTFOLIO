@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Priyanshi Rajput, Computer Science and Engineering student and SIH 2025 finalist.">
+  <title>Priyanshi Rajput | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f7fb; --panel: #ffffff; --panel2: #eef0f8; --text: #20243a;
+      --muted: #626b82; --accent: #7656d6; --accent2: #168f83;
+      --line: rgba(32,36,58,.12); --shadow: 0 20px 60px rgba(45,42,80,.10);
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body { margin: 0; background: radial-gradient(circle at 80% 0%, #e9e3ff 0, transparent 34%), var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(246,247,251,.88); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font: 800 1.05rem Manrope, sans-serif; letter-spacing: -.04em; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 25px; color: var(--muted); font-size: .9rem; }
+    .navlinks a:hover { color: var(--text); }
+    .hero { min-height: 660px; display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 55px; padding: 95px 0 85px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--accent2); font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 15px var(--accent2); }
+    h1,h2,h3 { font-family: Manrope, sans-serif; line-height: 1.15; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.3rem); letter-spacing: -.065em; margin: 20px 0; }
+    h1 span { background: linear-gradient(100deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { color: var(--muted); font-size: 1.12rem; max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .btn { padding: 12px 19px; border-radius: 12px; font-weight: 700; font-size: .92rem; border: 1px solid var(--line); transition: .2s ease; }
+    .btn.primary { background: linear-gradient(110deg, #9b7cf6, #69dcca); color: #101426; border: 0; }
+    .btn:hover { transform: translateY(-3px); }
+    .hero-card { background: linear-gradient(145deg, rgba(118,86,214,.12), rgba(22,143,131,.08)); border: 1px solid rgba(118,86,214,.22); border-radius: 28px; padding: 28px; box-shadow: var(--shadow); transform: rotate(2deg); }
+    .monogram { width: 100%; aspect-ratio: 1 / 1; border-radius: 22px; display: grid; place-items: center; background: linear-gradient(145deg, #e7e0ff, #d9f4ef); font: 800 clamp(5rem, 10vw, 8rem) Manrope; letter-spacing: -.09em; color: #6046b7; }
+    .hero-card p { color: var(--muted); margin-bottom: 0; text-align: center; }
+    section { padding: 78px 0; border-top: 1px solid var(--line); }
+    .section-tag { color: var(--accent2); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.05em; margin: 10px 0 14px; }
+    .section-intro { color: var(--muted); max-width: 680px; margin: 0 0 32px; }
+    .about-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 22px; }
+    .card { background: rgba(255,255,255,.9); border: 1px solid var(--line); border-radius: 20px; padding: 25px; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .facts { display: grid; gap: 12px; }
+    .fact { padding: 15px 17px; background: var(--panel2); border-radius: 13px; }
+    .fact strong { display: block; font-family: Manrope; font-size: 1.1rem; }
+    .fact span { color: var(--muted); font-size: .85rem; }
+    .skills { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .skill-card h3 { font-size: 1.05rem; margin: 0 0 13px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { font-size: .82rem; color: #4b526a; background: #f0effa; border: 1px solid rgba(65,54,115,.09); padding: 7px 11px; border-radius: 999px; }
+    .project { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+    .project h3 { font-size: 1.45rem; margin: 0 0 10px; }
+    .project p { color: var(--muted); max-width: 760px; }
+    .project-label { white-space: nowrap; color: var(--accent2); border: 1px solid rgba(103,232,210,.3); border-radius: 999px; padding: 7px 12px; font-size: .78rem; }
+    .project-points { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .timeline { border-left: 1px solid rgba(167,139,250,.5); margin-left: 8px; padding-left: 25px; display: grid; gap: 22px; }
+    .timeline-item { position: relative; }
+    .timeline-item:before { content: ""; position: absolute; left: -31px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px rgba(167,139,250,.12); }
+    .timeline-item h3 { font-size: 1.05rem; margin: 0 0 5px; }
+    .timeline-item p { color: var(--muted); margin: 0; }
+    .highlight { background: linear-gradient(110deg, rgba(118,86,214,.10), rgba(22,143,131,.07)); border: 1px solid rgba(118,86,214,.18); border-radius: 22px; padding: 30px; }
+    .highlight strong { color: var(--accent2); }
+    .contact-box { display: flex; justify-content: space-between; align-items: center; gap: 25px; flex-wrap: wrap; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { padding: 25px 0 35px; color: var(--muted); font-size: .85rem; text-align: center; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; font-size: .78rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 75px 0; gap: 35px; }
+      .hero-card { max-width: 260px; margin: auto; }
+      .about-grid, .skills { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; }
+      .project-label { width: fit-content; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(100% - 28px, 1100px); }
+      nav { align-items: flex-start; flex-direction: column; padding: 15px 0; gap: 8px; }
+      .navlinks { width: 100%; overflow-x: auto; padding-bottom: 4px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">PRIYANSHI<span>.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Computer Science & Engineering Student</div>
+      <h1>Hi, I'm<br><span>Priyanshi Rajput.</span></h1>
+      <p class="lead">A curious developer, problem-solver, and lifelong learner building a strong foundation in software development. Currently focused on Data Structures & Algorithms and growing my skills across frontend and backend development.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work ↗</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="monogram">PR</div>
+      <p>Learn. Build. Improve. Repeat.</p>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-tag">01 / About me</div>
+      <h2>Building skills with purpose.</h2>
+      <div class="about-grid">
+        <div class="card">
+          <p>I'm a third-year B.Tech student in Computer Science and Engineering at Indore Institute of Science and Technology, Indore. I enjoy exploring technology, learning how software works, and turning ideas into practical solutions. Being a finalist at Smart India Hackathon 2025 was an important milestone that strengthened my interest in teamwork, innovation, and solving real-world problems. Right now, I'm consistently working on Data Structures & Algorithms while developing my skills in web development and emerging technologies.</p>
+        </div>
+        <div class="facts">
+          <div class="fact"><strong>B.Tech · 3rd Year</strong><span>Computer Science & Engineering</span></div>
+          <div class="fact"><strong>Indore, India</strong><span>Based in Madhya Pradesh</span></div>
+          <div class="fact"><strong>SIH 2025 Finalist</strong><span>Travelled to Mysuru for the finale</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-tag">02 / Skills & learning</div>
+      <h2>Tools I'm learning and building with.</h2>
+      <p class="section-intro">A growing toolkit across web development, programming, and technology fundamentals.</p>
+      <div class="skills">
+        <div class="card skill-card">
+          <h3>Web Development</h3>
+          <div class="chips"><span class="chip">Frontend Development</span><span class="chip">Backend Development</span><span class="chip">Django</span></div>
+        </div>
+        <div class="card skill-card">
+          <h3>Programming & CS</h3>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Data Structures & Algorithms</span><span class="chip">Problem Solving</span></div>
+        </div>
+        <div class="card skill-card">
+          <h3>Courses & Foundations</h3>
+          <div class="chips"><span class="chip">Cisco Python</span><span class="chip">Cybersecurity</span><span class="chip">Data Science</span><span class="chip">Artificial Intelligence</span></div>
+        </div>
+      </div>
+      <p class="section-intro" style="margin-top:18px;font-size:.88rem;">Coursework completed through Cisco / Cisco Networking Academy learning programs, as provided.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-tag">03 / Featured project</div>
+      <h2>Ideas turned into solutions.</h2>
+      <div class="card project" style="margin-bottom:16px;">
+        <div>
+          <h3>Skill Exchange Platform</h3>
+          <p>A platform designed to connect people who want to learn with people who can teach. It uses a credit-based learning model: users can teach a skill to earn credits and use those credits to learn from others, making skill development more accessible.</p>
+          <p><strong>Key features</strong></p>
+          <div class="project-points">
+            <span class="chip">Learner & Mentor Roles</span><span class="chip">Teach-to-Earn Credits</span><span class="chip">Learn with Credits</span><span class="chip">Mentor Verification</span><span class="chip">Ratings & Reviews</span><span class="chip">Live Learning Sessions</span>
+          </div>
+          <p style="font-size:.88rem;margin-top:18px;"><strong>Focus:</strong> Accessible peer-to-peer learning and skill sharing.</p>
+        </div>
+        <span class="project-label">Hackathon project</span>
+      </div>
+      <div class="card project" style="margin-bottom:16px;">
+        <div>
+          <h3>Honey Traceability System</h3>
+          <p>A software concept for tracking honey from the beehive to the consumer. The system brings together beekeeper and hive information, quality verification details, and QR-code-based product traceability so customers can learn more about the origin and journey of the honey they purchase.</p>
+          <p><strong>Key focus areas</strong></p>
+          <div class="project-points">
+            <span class="chip">Beekeeper & Hive Records</span><span class="chip">Quality Verification</span><span class="chip">QR-Based Traceability</span><span class="chip">Hive-to-Consumer Tracking</span>
+          </div>
+          <p style="font-size:.88rem;margin-top:18px;"><strong>Focus:</strong> Transparency, product authenticity, and trust in the honey supply chain.</p>
+        </div>
+        <span class="project-label">In development</span>
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Smart Grocery Expiry & Discount Management</h3>
+          <p>A software solution to help grocery stores reduce product wastage and avoid losses caused by items reaching their expiry dates before being sold. The system tracks product expiry dates and alerts store managers when items are nearing expiry, so they can put those products on sale in time.</p>
+          <p><strong>Key focus areas</strong></p>
+          <div class="project-points">
+            <span class="chip">Expiry-Date Tracking</span><span class="chip">Near-Expiry Alerts</span><span class="chip">Discount / Sale Reminders</span><span class="chip">Inventory Management</span><span class="chip">Food Waste Reduction</span>
+          </div>
+          <p style="font-size:.88rem;margin-top:18px;"><strong>Focus:</strong> Reducing avoidable food waste while helping store owners minimise inventory losses.</p>
+        </div>
+        <span class="project-label">In development</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <div class="section-tag">04 / Education & milestones</div>
+      <h2>My learning journey.</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>B.Tech — Computer Science & Engineering</h3>
+          <p>Indore Institute of Science and Technology, Indore · Third year</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Smart India Hackathon 2025 — Finalist</h3>
+          <p>Qualified as a finalist and travelled to Mysuru to participate in the finale.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Technical Courses — Cisco</h3>
+          <p>Completed learning courses in Python, Cybersecurity, Data Science, and Artificial Intelligence.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Schooling</h3>
+          <p>St. Teresa's Girls School, Bhopal.</p>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:35px;">
+        <strong>Currently focused on</strong>
+        <p style="color:var(--muted);margin:8px 0 0;">Strengthening problem-solving skills through DSA, practising consistently, and continuing to grow as a full-stack developer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-tag">05 / Contact</div>
+      <div class="card contact-box">
+        <div>
+          <h2 style="margin-top:0;">Let's connect.</h2>
+          <p class="section-intro" style="margin-bottom:0;">I'm open to connecting with fellow developers, learning opportunities, internships, and exciting projects.</p>
+        </div>
+        <div class="contact-links">
+          <!-- Replace the # placeholders with your real profile URLs and email address. -->
+          <a class="btn primary" href="mailto:priyanshi.rajputcse2024@indoreinstitute.com">Email me ↗</a>
+          <a class="btn" href="https://www.linkedin.com/search/results/people/?keywords=Priyanshi%20Rajput%20Indore%20Institute%20of%20Science%20and%20Technology" target="_blank" rel="noopener">Find me on LinkedIn ↗</a>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:.82rem;margin-top:14px;">Email is connected. The LinkedIn button opens a people search using your name, location, and institute; replace it with your direct profile URL when you share it.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Priyanshi Rajput · Designed with purpose.</div></footer>
+</body>
+</html>
